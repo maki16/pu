@@ -1,0 +1,46 @@
+@charset 'utf-8';
+
+*, *::before, *::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul{
+    list-style: none;
+
+}
+img{
+    display: block;
+    max-width: 100%;;
+}
+.container{
+    width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    /* 列 */
+    grid-template-columns: 320px 320px 320px;
+    /* 行 */
+    grid-template-rows: 240px 240px;
+   /*レイアウト  */
+    justify-content: end;
+    align-content: start;
+    align-items: center;
+    /* コンテンツの流れ */
+    grid-auto-flow:row;
+    /* rowが初期値　columnは縦*/
+
+    /* ギャップ　隙間 */
+    grid-gap: 20px 10px;
+    /* row-gap column-gapの順 */
+}
+
+
+    @media screen and (max-width: 999px){
+        .container{
+            width: 320px;
+            grid-template-columns: 155px 155px;
+            grid-template-rows: 116px  116px  116px;
+            grid-gap: 10px;
+        }
+    }
