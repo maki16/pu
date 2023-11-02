@@ -1,0 +1,69 @@
+@charset 'utf-8';
+
+.bg-001,
+.bg-002{
+    height: 400px;
+}
+
+.bg-001{
+    background: url("../img/bg-stripe.png") left center repeat;
+}
+
+.bg-002{
+    background:  #98807b url("../img/bg-cat.png") center bottom no-repeat
+}
+
+.bg-size{
+    border: 5px solid #ccc;
+    width: 400px;
+    height: 400px;
+    background: url(../img/bg-cat-light.png)
+    right bottom no-repeat;
+    margin-bottom: 20px;
+}
+
+.px{
+    background-size: 150px 50px;
+}
+.per{
+    background-size: 50% 50%;
+}
+.cover{
+    background-size: cover;
+    background-position: center 10%;
+}
+.contain{
+    background-size: contain;
+
+}
+.fit{
+    border: 3px solid #583726;
+    background: #a478e0;
+    aspect-ratio: 20/ 9;
+}
+.fit img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left top; 
+    /* center center初期値 */
+}
+.bg-003,
+ .bg-004{
+    height: 400px;
+ }
+
+ .bg-003{
+    background: 
+        url(../img/bg-cat.png) left bottom no-repeat,
+        url(../img/bg-stripe.png) center center
+        ;
+ }
+
+ .bg-004{
+    background: 
+    url(../img/bg-frame.png) center center,
+    linear-gradient(to left bottom,#ffd5c9 40%,yellow 60%, #ff6464 70%)
+    ;
+ }
