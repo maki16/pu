@@ -27,10 +27,28 @@ section img{
     right: 0;
     top: 80px;
 }
+/* 画面固定 */
 .fixed{
     position: fixed;
     top:0;
     left:0;
     background: goldenrod;
     width: 100%;
+}
+/* 途中から固定できる　 */
+.sticky{
+    display: flex;
+    margin-top: 40vh;
+    margin-bottom: 150vh;
+    bottom: 3px solid gray;
+
+}
+.box{
+    background-color: salmon;
+    width: 150px;
+    height: 150px;
+
+    position:sticky;
+    top: 50px;
+    
 }
