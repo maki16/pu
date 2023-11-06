@@ -1,0 +1,68 @@
+@charset 'utf-8';
+*, *::before, *::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header{
+    width: 100vw;
+    /* 100vwはウィンドウの幅　スクロールバーも含める　　１００％の場合は親要素の差応対なのでスクロールばーまで行くことはない*/
+}
+ul{
+    background-color: #37bd82;
+    text-align: center;
+}
+ul li{
+    display: inline-block;
+    position: relative;
+    /* なぜliにrelativeを入れたのか　当店についてに紐づいてレイアウトしやすくなる　どこを基準にして出していくか */
+}
+ul li a{
+    display:block;
+    padding: 1em;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+}
+ul li a::after{
+    content: url(../img/arrow.png);
+    margin-left: 10px;
+    vertical-align: middle;
+}
+/* aの後にはスペース開けない。子孫セレクタになってしまう */
+ul li a:hover{
+    background: #2c9869;
+}
+ul.sub-list{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+}
+
+ul.sub-list li{
+    width: 100%;
+}
+
+/* ul.sub-listは兄弟ではないので＋はいらない 
+子孫セレクタ、子要素は入れてOK"＞"*/
+ul.gnav-list li:hover >ul.sub-list{
+    display: block;
+}
+header{
+    position: fixed;
+    top:0;
+    left:0;
+}
+
+main{
+    margin-top: 60px;
+}
+
+main div{
+    background: #eee;
+    height: 80vh;
+    width: 90%;
+    margin: 0 auto 40px;
+}
