@@ -1,0 +1,60 @@
+@charset 'utf-8';
+
+*, *::before, *::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow{
+    width: 90%;
+    margin: 40px auto;
+    /* imgにposition absoluteをかけるために記入 */
+    position:relative;
+    /* position absoluteによって浮いてしまうため、その他コンテンツが下に来てしまう、それを解除するために下のコード　幅１６　高さ９ */
+    aspect-ratio: 16/9;
+}
+
+.slideshow img{
+    /* 画像同士に隙間をなくす */
+    display: block;
+    border-radius: 20px;
+    max-width: 100%;
+    /* 画像を重ねるためのコード　最後の画像が最上位にくる、しかし上に浮いてしまうため、その他コンテンツが下に来てしまう*/
+    position: absolute;
+    /* 4枚の画像をずれないようにするため */
+    top: 0;
+    left: 0;
+}
+
+/* 1枚目：1秒フェードイン、2秒表示、フェイドアウトに1秒の4秒が1枚にかかる時間（待機時間は8秒あるので実際は12秒）、2枚目以降はずらしていくP151の絵 */
+@keyframes slideshow{
+    
+    0%{
+        opacity: 0;
+    }
+    8.3%,24.9%{
+        opacity: 1;
+    }
+    33.3%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+/* backwardsを入れることで０％のopacity：0；が適用される */
+.slideshow img{
+    animation: slideshow 12s infinite backwards
+}
+.slideshow img:nth-child(2){
+    /* animation: slideshow 12s infinite;
+は引き継がれているので遅延時間のみ記載でOK */
+    animation-delay: 3s;
+}
+.slideshow img:nth-child(3){
+    animation-delay: 6s;
+}
+.slideshow img:nth-child(4){
+    animation-delay: 9s;
+}
