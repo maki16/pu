@@ -1,0 +1,166 @@
+@charset 'utf-8';
+
+div{
+    width: 100px;
+    height: 100px;
+    padding: 1em;
+    margin: 2em 2em 4em;
+    background: #ad4444;
+    color: #fff;
+    font-size: 14px;
+}
+.width{
+    transition: 
+    width 0.5s ease-out 0s,
+    background 1s
+    ;
+    /* アニメーション対象のプロパティ(初期値:all) */
+    transition-property: width,background;
+    
+    /* アニメーション時間 */
+    transition-duration:0.5s,1s;
+    
+    /* イージング */
+    /* transition-timing-function: ease-out; */
+    transition-timing-function:cubic-bezier(.24,1.16,.5,.16);
+    
+     /* 遅延時間　アニメーションが発動するまでの待機時間 */
+    transition-delay:0s;
+   
+}
+.width:hover{
+    width: 400px;
+    background: blueviolet;
+}
+.circle{
+    transition: border-radius 0.2s;
+}
+.circle:hover{
+    border-radius: 50%;
+}
+.scale{
+    transition:transform 2ms ease-in-out ;
+}
+.scale:hover{
+    /* scaleX(1.5,　2) scaleY(1.5) */
+    transform:scale(1.5);
+    /* scale:1.5; */
+    transition:transform 0.5s ease-in-out 1s;
+}   
+
+@keyframes zigzag{
+    0%{
+        transform: translate(0,0);
+        background: yellow;
+    }
+    50%{
+        transform: translate(50px,50px);
+    }
+    100%{
+        transform: translate(100px,0);
+    }
+}
+.sample1{
+    animation: zigzag 2s ease 0s 3 normal both;
+    /* アニメーション名 */
+    animation-name:zigzag;
+    
+    /* 再生時間 */
+    animation-duration: 2s;
+
+    /* イージング */
+    animation-timing-function: ease;
+
+    /* 遅延時間 */
+    animation-delay: 2s;
+
+    /* 繰り返し回数 */
+    animation-iteration-count: 3;
+
+    /* アニメーションの方向 */
+    animation-direction: normal;
+    
+    /* 再生前と再生後のスタイルの適用　　 */
+    animation-fill-mode: both;
+
+    /* 
+    適用しない:none
+    再生前後:both
+    再生前:backwards
+    再生後:forwards
+    */
+}
+
+@keyframes scale-and-color{
+    0%{
+        background: #ad4444;
+        transform: scale(1);
+    }
+    50%{
+        background: #3946ad;
+        transform: scale(1.5);
+    }
+    100%{
+        background: #4dad48;
+        transform: scale(1);
+    }
+}
+
+.sample2{
+    animation: scale-and-color 4s linear 0s infinite alternate paused;
+    
+    /*繰り返し回数  永遠に繰り返し*/
+    animation-iteration-count: infinite;
+
+    /*アニメーションの方向  */
+    animation-direction: alternate;
+    /* 
+    再生：normal
+    逆再生：reverse
+    折り返し：alternate
+    逆折り返し：alternate-reverse
+    */
+
+    /* アニメーションの再生・一時停止 */
+    animation-play-state: paused;
+
+    /* 
+    再生:running
+    一時停止:paused
+    */
+
+}
+
+
+img{
+    width: 100px;
+    margin-right: 2em;
+}
+
+@keyframes loading{
+    0%{
+        transform: rotate(0deg);
+    }
+    30%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+
+}
+
+.sample3{
+    animation: loading 1s linear 0s infinite;
+}
+
+@keyframes heart{
+    0%{transform: scale(1);}
+    8%{transform: scale(1);}
+    15%{transform: scale(1.1);}
+    100%{transform: scale(1);}
+}
+
+.sample4{
+    animation: heart .8s ease 0s infinite normal;
+}
