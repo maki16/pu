@@ -8,7 +8,7 @@ ul{
 }
 
 ul li{
-    border-bottom: 4px solid #6baeb3;
+    border-bottom: 4px dotted #6baeb3;
     margin-bottom: 1em;
 }
 
@@ -25,7 +25,7 @@ ol{
 ol li{
     padding-bottom: 20px;
     margin-bottom: 20px;
-    background: url(../images/arrow.png)no-repeat bottom left;
+    background: url(../images/arrow.png) no-repeat bottom left;
 }
 ol li:last-of-type{
     padding-bottom: 0;
