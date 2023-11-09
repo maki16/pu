@@ -27,7 +27,9 @@ ul.gnav-list-1 li a::first-line{
     font-size: 16px;
     font-weight: bold;
 }
-
+ul.gnav-list-1 li a:hover{
+    background: #14727e;
+}
 /* ナビゲーション２ */
 ul.gnav-list-2{
  background: #f0dcd4;
