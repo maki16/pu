@@ -15,6 +15,7 @@ section{
 h2{
    margin-bottom: 1em;
 }
+/* 親要素にdisplay:flex;をかけると直下の子要素が横並びになる */
 .flex-container{
     display: flex;
     justify-content: space-around;
