@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/*コメント（変換後に出てくるコメント）　*/
+p {
+  background-color: rgb(198, 16, 16);
+}
+
+footer {
+  color: rgb(198, 16, 16);
+}
+
+.column {
+  width: 100px;
+}
+
+section {
+  margin: 0 auto 40px;
+}
+section div {
+  background-color: yellow;
+}
+section div a {
+  color: violet;
+}
+
+.feature {
+  margin-bottom: 20px;
+  background: brown;
+}
+.feature_text {
+  font-size: 0.8rem;
+}
+.feature_text_img {
+  width: 100px;
+}
+
+.box {
+  padding: 1em;
+  border: 1px solid #aaa;
+  background-color: #f9f9f9;
+}
+
+.layout {
+  width: 500px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.2rem;
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    color: #000;
+    font-size: 1.5rem;
+  }
+}/*# sourceMappingURL=style.css.map */

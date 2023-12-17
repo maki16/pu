@@ -1,0 +1,81 @@
+@charset 'utf-8';
+
+// コメント（変換後に出てこないコメント）
+/*コメント（変換後に出てくるコメント）　*/
+
+// vの部分はなんでもいい。名前をつける.
+// 干渉しない場合、asの後に名前ではなく＊をつけるとその後の名前を消してOK
+@use '_variables.scss' as *;
+@use '_mixins.scss' as *;
+@forward '_contact.scss';
+
+
+p{
+    background-color: $color;
+}
+footer{
+    color:$color;
+}
+
+// 算術演算
+.column{
+    // Sassのcalc関数は計算結果が出力される
+    width: calc(1200 / 12*1px);
+    // cssnにはcalc(関数が存在する)(計算結果は出てこない)
+    // calc(1200 / 12*1px)
+}
+
+// ネスト
+section{
+    margin: 0 auto 40px;
+
+    div{
+        background-color: yellow;
+    
+    a{
+        color:violet
+    }
+    
+    }
+}
+
+// ネスト（親クラスの継承）
+.feature{
+    margin-bottom: 20px;
+    background: brown;
+    
+    // .feature_text
+    &_text{
+        font-size: .8rem;
+
+// .feature_text_img
+        &_img{
+            width: 100px;
+          }
+    }
+}
+
+
+.box{
+    @include common-box;
+}
+
+
+
+.layout{
+    @include example(500px);
+}
+
+
+
+h1{
+    // モバイル
+    font-size: 1.2rem;
+
+    // デスクトップ
+    @include mediaquery(small){
+        color:#000;
+        font-size: 1.5rem;
+    }
+
+}

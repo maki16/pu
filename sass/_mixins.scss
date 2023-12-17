@@ -1,0 +1,33 @@
+// ミックスイン
+// @mixin ミックスイン名（）{...}
+@mixin common-box {
+    padding: 1em;
+    border: 1px solid #aaa;
+    background-color:  #f9f9f9;
+}
+
+
+// ミックスイン名（変数名：デフォルト値）
+// @includeで呼び出す際に値を受け取らなかった場合に使用される
+// 値が渡されるとデフォルト値は上書きされる・・・１００％と書いていても５００pxを指定しているので５００pxになる
+
+@mixin example($width:100%){
+    width: $width;
+    margin:0 auto;
+}
+
+@mixin mediaquery($size){
+    @if $size == small {
+        @media screen and (max-width: 767px){
+            @content;
+        }  
+        }
+
+        @if $size == large{
+            @media screen and (min-width: 768px) {
+                @content;
+            }
+        }
+    }
+   
+   
