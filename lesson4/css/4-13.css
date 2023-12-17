@@ -14,6 +14,7 @@ div{
     width 0.5s ease-out 0s,
     background 1s
     ;
+    /* 以下細分化して記載した場合の記載方法⇩ */
     /* アニメーション対象のプロパティ(初期値:all) */
     transition-property: width,background;
     
@@ -47,6 +48,17 @@ div{
     /* scale:1.5; */
     transition:transform 0.5s ease-in-out 1s;
 }   
+
+.turn{
+    transition:transform 2s ease-in-out ;
+}
+.turn:hover{
+    transform:scale(1.5);
+    transition:transform 0.5s ease-in-out 1s;
+}   
+
+
+
 
 @keyframes zigzag{
     0%{
