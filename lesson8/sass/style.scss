@@ -1,0 +1,7 @@
+// 全ての巻き取り役
+
+// 共通で使用するファイルを上に書いておくと良い
+@forward'./variables';
+@forward'./mixins';
+@forward'./common';
+@forward'./pages/'; // _index.scssは省略されているが記入しなくて良い
